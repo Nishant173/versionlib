@@ -3,9 +3,9 @@ import unittest
 from versionlib.versions import Version
 
 
-class TestVersion(unittest.TestCase):
+class TestVersionClass(unittest.TestCase):
 
-    def test_versions_legal(self):
+    def test_correct_versions(self):
         a = Version("3.12.1.5.12")
         b = Version("3.12.1.5.06.1")
         self.assertTrue(a > b)
@@ -30,7 +30,7 @@ class TestVersion(unittest.TestCase):
         self.assertTrue(e >= f)
         self.assertTrue(e <= f)
 
-    def test_versions_illegal(self):
+    def test_incorrect_versions(self):
         with self.assertRaises(TypeError):
             _ = Version(1.2)
         
